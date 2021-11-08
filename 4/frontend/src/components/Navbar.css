@@ -1,0 +1,21 @@
+.navbar{
+    background-color: crimson;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons{
+    width: 350px;
+}
+
+.cart{
+    height: 50px;
+    padding: 50px;
+}
+
+.categories{
+    height: 50px;
+    padding: 50px;
+}
