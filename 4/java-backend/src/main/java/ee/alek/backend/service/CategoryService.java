@@ -21,12 +21,15 @@ public class CategoryService {
         categoryRepository.save(category);
     }
 
-    public Category getCategory(Long id){
-        return categoryRepository.getById(id);
+    public Category getOneCategory(Long id) throws Exception {
+        if (categoryRepository.findById(id).isPresent()){
+            return categoryRepository.getById(id);
+        }
+        throw new Exception();
     }
 
 
-    public void deleteCategory(Category category) {
-        categoryRepository.delete(category);
+    public void deleteCategory(Long id) {
+        categoryRepository.deleteById(id);
     }
 }

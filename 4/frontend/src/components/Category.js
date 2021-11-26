@@ -1,8 +1,10 @@
+import '../components/ListSmth.css';
+
 function Category(props){
     return (
-        <div>
-            <div className="categoryName">{props.name}</div>
-            <div className="categoryType">{props.categoryType}</div>
+        <div className="grid-elements">
+            <div className="categoryName">Kategooria nimi: {props.name}</div>
+            <div className="categoryType">Tüüp: {props.categoryType}</div>
         </div>
     )
 }

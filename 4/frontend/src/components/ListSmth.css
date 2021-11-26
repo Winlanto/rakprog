@@ -1,0 +1,47 @@
+.grid {
+  width: 100%;
+  min-width: 460px;
+  max-width: 960px;
+  min-height: 100px;
+  margin: 1.5rem auto;
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.grid-elements {
+  min-height: 100px;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  background: #d0c8e3;
+  color: #000000;
+  margin: 20px 10px;
+  flex: 1 1 calc(25% - 20px);
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 25px;
+  background-color: #4068c0;
+  color: #dddddd;
+  padding: 10px 20px;
+  max-height: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #496ebd;
+  color: #f7f7f7;
+}

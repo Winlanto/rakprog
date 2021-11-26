@@ -22,21 +22,19 @@ public class CategoryController {
     }
 
     @PostMapping("categories")
-    public String postCategories(@RequestBody Category category) {
+    public void postCategories(@RequestBody Category category) {
         categoryService.saveCategory(category);
-        return "kategooria edukalt esitatud - " + category.getName()+", tüüp - "+category.getCategoryType();
     }
 
-    @GetMapping("categories/{id}")
-    public String getCategory(@PathVariable Long id) {
-        return id+". "+categoryService.getCategory(id).getName()+", tüüp - "+categoryService.getCategory(id).getCategoryType();
+    @GetMapping("view-category/{id}")
+    public Category getOneCategory(@PathVariable Long id) throws Exception {
+        return categoryService.getOneCategory(id);
     }
 
-    @GetMapping("categories/delete/{id}")
-    public String deleteCategory(@PathVariable Long id){
-        String name = categoryService.getCategory(id).getName();
-        categoryService.deleteCategory(categoryService.getCategory(id));
-        return "category "+ id +" deleted - "+ name;
+    @DeleteMapping("delete-category/{id}")
+    public List<Category> DeleteCategory(@PathVariable Long id){
+        categoryService.deleteCategory(id);
+        return categoryService.getCategories();
     }
 
 }

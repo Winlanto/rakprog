@@ -22,21 +22,24 @@ public class ItemController {
     }
 
     @PostMapping("items")
-    public String postItems(@RequestBody Item item) {
+    public void postItems(@RequestBody Item item) {
         itemService.saveItem(item);
-        return "ese edukalt esitatud - " + item.getName();
     }
 
-    @GetMapping("item/{id}")
-    public String getItem(@PathVariable Long id) {
-        return id+". "+itemService.getItem(id).getName();
+    @GetMapping("view-item/{id}")
+    public Item getOneItem(@PathVariable Long id) throws Exception {
+        return itemService.getOneItem(id);
     }
 
-    @GetMapping("items/delete/{id}")
-    public String deleteItem(@PathVariable Long id){
-        String name = itemService.getItem(id).getName();
-        itemService.deleteItem(itemService.getItem(id));
-        return "item "+ id +" deleted - "+ name;
+    @DeleteMapping("delete-item/{id}")
+    public List<Item> deleteItem(@PathVariable Long id){
+        itemService.deleteItem(id);
+        return itemService.getItems();
+    }
+
+    @PostMapping("edit-item")
+    public void editItem(@RequestBody Item item){
+        itemService.editItem(item);
     }
 
 }

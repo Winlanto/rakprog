@@ -1,4 +1,3 @@
-import './AddItemForm.css'
 import {useRef} from "react"
 
 function AddItemForm(props){
@@ -25,12 +24,12 @@ function AddItemForm(props){
 
     return(
         <form onSubmit={formSubmitHandler}>
-            <label>Eseme nimi</label><br />
-            <input ref={nameInputRef} type="text" required placeholder="nimi"/><br />
-            <label>Eseme hind</label><br />
-            <input ref={priceInputRef} type="number" required placeholder="hind"/><br />
-            <label>Eseme kategooria</label><br />
-            <input ref={categoryInputRef} type="text" required placeholder="kategooria"/><br />
+            <label htmlFor="name">Eseme nimi</label><br />
+            <input id="name" type="text"ref={nameInputRef} required placeholder="nimi"/><br />
+            <label htmlFor="price">Eseme hind</label><br />
+            <input id="price" ref={priceInputRef} type="number" required placeholder="hind"/><br />
+            <label htmlFor="category">Eseme kategooria</label><br />
+            <input id="category" type="text" ref={categoryInputRef} required placeholder="kategooria"/><br />
             <button>Sisesta uus ese</button>
         </form>
     )

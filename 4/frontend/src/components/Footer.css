@@ -1,0 +1,9 @@
+footer{
+    height: 50px;
+    width: 100%;
+    min-width: 460px;
+    background: linear-gradient(200deg, rgba(178,39,39,1) 0%, rgba(124,57,157,1) 50%, rgba(50,55,176,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

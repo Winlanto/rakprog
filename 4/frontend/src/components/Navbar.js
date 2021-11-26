@@ -4,17 +4,22 @@ import { Link } from 'react-router-dom'
 function Navbar(){
     return(
         <div className="navbar">
-            <Link to="/">
-                <img className="logo" src="rakProg.png" alt="logo" />
-            </Link>
-                <div className="icons">
-                <Link to="/categories">
-                    <img className="categories" src="categories.svg" alt="categories" />
-                </Link>
-                <Link to="/cart">
-                    <img className="cart" src="cart.svg" alt="cart" />
+            <div className="logo-container">
+                <Link to="/">
+                        <img id="logo" src="./rakProg.png" alt="logo" />
                 </Link>
             </div>
+                <ul className="navbar-options">
+                    <Link to="/categories">
+                        <li id="categories"><h4 className="option-text">Cateories</h4></li>
+                    </Link>
+                    <Link to="/cart">
+                        <li id="cart"><h4 className="option-text">Cart</h4></li>
+                    </Link>
+                    <Link to="/admin">
+                        <li id="admin"><h4 className="option-text">Admin</h4></li>
+                    </Link>
+                </ul>
         </div>
     )
 }

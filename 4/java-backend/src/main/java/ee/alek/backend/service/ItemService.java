@@ -21,12 +21,18 @@ public class ItemService {
         itemRepository.save(item);
     }
 
-    public Item getItem(Long id){
-        return itemRepository.getById(id);
+    public Item getOneItem(Long id) throws Exception {
+        if(itemRepository.findById(id).isPresent()) {
+            return itemRepository.findById(id).get();
+        }
+        throw new Exception();
     }
 
+    public void deleteItem(Long id) {
+        itemRepository.deleteById(id);
+    }
 
-    public void deleteItem(Item item) {
-        itemRepository.delete(item);
+    public void editItem(Item item){
+        itemRepository.save(item);
     }
 }
